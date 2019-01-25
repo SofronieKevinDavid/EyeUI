@@ -136,19 +136,20 @@ body,html{
 
 
 table  th{
-    color:#fff2f7;
+    padding:15px;
+    color: azure;
     font-size:23px;
 }
 
 table td{
 
-    color:#fff2f7;
-
+    padding:15px;
+    color:azure;
     font-size:23px;
 }
 
 .homeKey{
-    width: 45px;
+    width: 23px;
     float:left;
     text-decoration: none;
     border:0;
@@ -158,10 +159,10 @@ table td{
     display:block;
     margin: auto;
     text-align: center;
-    border:2px solid #2ecc71;
+    border:2px solid azure;
     padding:14px;
     outline:none;
-    color:white;
+    color:azure;
     border-radius: 50%;
     transition:0.25s;
     cursor:pointer;
@@ -173,13 +174,16 @@ table td{
 
 a{
     text-decoration: none;
-    font-color:#2ecc71;
     font-family: "montserrat",sans-serif;
-    font-size:40px;
+    font-size:20px;
     font-weight:normal;
     padding:10px;
     transition:0.8s;
 }
+.homeKey:hover{
+    border-color: #2ecc71;
+}
 a:hover{
     background-color: #2ecc71;
+    color:azure;
 }
