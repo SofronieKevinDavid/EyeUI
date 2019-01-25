@@ -2,22 +2,22 @@ var editId;
 
 // TODO edit API url's
 var API_URL = {
-    CREATE: './api/add.json',
-    READ: './api/list.json',
+    CREATE: './api/performance.json',
+    READ: './api/performance.json',
     UPDATE: './api/update.json',
     DELETE: './api/delete.json'
 };
 
-window.PhoneBook = {
-    getRow: function(person) {
+window.Eye = {
+    getRow: function(history) {
         // ES6 string template
         return `<tr>
-            <td>${person.firstName}</td>
-            <td>${person.lastName}</td>
-            <td>${person.phone}</td>
+            <td>${history.date}</td>
+            <td>${history.result}</td>
+            <td>${history.runnedGameLevel}</td>
+            <td>${history.gameName}</td>
             <td>
-                <a href='#' data-id='${person.id}' class='delete'>&#10006;</a>
-                <a href='#' data-id='${person.id}' class='edit'>&#9998;</a>
+                <a href='#../html/performance.html' data-id='${history.id}' class='delete'>&#10006;</a>
             </td>
         </tr>`;
     },
@@ -26,9 +26,9 @@ window.PhoneBook = {
         $.ajax({
             url: API_URL.READ,
             method: "GET"
-        }).done(function (persons) {
-            console.info('done:', persons);
-            PhoneBook.display(persons);
+        }).done(function (histories) {
+            console.info('done:', histories);
+            Eye.display(histories);
         });
     },
 
@@ -134,18 +134,18 @@ window.PhoneBook = {
         button.parentNode.removeChild(button);
     },
 
-    display: function(persons) {
-        window.persons = persons;
+    display: function(histories) {
+        window.histories = histories;
         var rows = '';
 
         // ES6 function systax inside forEach
-        persons.forEach(person => rows += PhoneBook.getRow(person));
-        rows += PhoneBook.getActionRow();
-        $('#phone-book tbody').html(rows);
+        histories.forEach(history => rows += Eye.getRow(history));
+        rows +=Eye.getActionRow();
+        $('#performance tbody').html(rows);
     }
 };
 
 var persons = [];
 console.info('loading persons');
-PhoneBook.load();
-PhoneBook.bindEvents();
+Eye.load();
+Eye.bindEvents();
