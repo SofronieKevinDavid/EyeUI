@@ -149,6 +149,7 @@ table  th{
     padding:15px;
     color: azure;
     font-size:19px;
+    cursor:default;
 }
 
 table td{
@@ -156,6 +157,11 @@ table td{
     padding:15px;
     color:azure;
     font-size:19px;
+    cursor:default;
+}
+
+table td:nth-child(5){
+    text-decoration: red;
 }
 
 .homeKey{
