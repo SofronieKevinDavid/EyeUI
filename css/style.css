@@ -149,27 +149,27 @@ table td{
 }
 
 .homeKey{
-    width: 23px;
+    background: #191919;
+    padding:15px;
+    margin:15px;
+    width: auto;
     float:left;
     text-decoration: none;
     border:0;
-    background: none;
-    position:relative;
-    left:30px;
     display:block;
     margin: auto;
     text-align: center;
-    border:2px solid azure;
+    position:relative;
     padding:14px;
     outline:none;
     color:azure;
-    border-radius: 50%;
+    width:100px;
+    top:70%;
+    bottom:30%;
     transition:0.25s;
     cursor:pointer;
-    top:4%;
-    left: 4%;
-    right: 90%;
-    bottom:90%;
+    background: #191919;
+    float:none;
 }
 
 a{
