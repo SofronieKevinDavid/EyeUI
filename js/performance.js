@@ -17,7 +17,7 @@ window.Eye = {
             <td>${history.runnedGameLevel}</td>
             <td>${history.gameName}</td>
             <td>
-                <a href='#../html/performance.html' data-id='${history.id}' class='delete'>&#10006;</a>
+                <a href='../html/performance.html' data-id='${history.id}' class='delete'>&#128465;</a>
             </td>
         </tr>`;
     },
@@ -146,6 +146,6 @@ window.Eye = {
 };
 
 var persons = [];
-console.info('loading persons');
+console.info('loading histories');
 Eye.load();
 Eye.bindEvents();
