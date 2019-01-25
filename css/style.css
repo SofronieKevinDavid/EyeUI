@@ -90,8 +90,8 @@ body,html{
 
 .index{
     width: 300px;
-    padding:40px;
-    position:absolute;
+    padding:0px;
+    position:relative;
     top: 50%;
     left: 50%;
     transform: translate(-50%,-50%);
@@ -101,24 +101,29 @@ body,html{
 
 .index a{
     font-family: "montserrat",sans-serif;
-    width: 30%;
+    width: 80%;
     text-decoration: none;
     border:0;
     background: none;
-    display:block;
-    margin:15px auto;
+    display: block;
+    text-transform: uppercase;
     text-align: center;
-    border:2px solid #2ecc71;
-    padding:12.5px;
+    font-weight:normal;
+    padding:30px;
     outline:none;
-    font-size:15px;
+    font-size:18px;
     color:white;
-    border-radius: 24px;
+
+    margin:0;
     transition:0.25s;
     cursor:pointer;
 }
 
-.index a:hover{
+.index a#one:hover{
+    background-color: #2ecc71;
+}
+
+.index a#two:hover{
     background-color: #2ecc71;
 }
 
