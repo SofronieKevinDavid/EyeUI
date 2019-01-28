@@ -133,6 +133,23 @@ body,html{
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 .table{
     white-space: nowrap;
     overflow: hidden;
@@ -148,9 +165,6 @@ body,html{
 
 
 table  th{
-    white-space: nowrap;
-    overflow: hidden;
-    table-layout: fixed;
     padding:15px;
     color: azure;
     font-size:19px;
@@ -158,18 +172,39 @@ table  th{
 }
 
 table td{
-    white-space: nowrap;
-    overflow: hidden;
-    table-layout: fixed;
     padding:15px;
     color:azure;
     font-size:19px;
     cursor:default;
 }
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 table td:nth-child(5){
     text-decoration: red;
 }
+
 
 .homeKey{
     background: #191919;
