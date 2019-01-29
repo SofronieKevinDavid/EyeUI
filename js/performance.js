@@ -1,10 +1,10 @@
 var editId;
 
 var API_URL = {
-    CREATE: '../api/performance.json',
+    // CREATE: '../api/performance.json',
     READ: 'http://localhost:8010/history?userID=1',
-    UPDATE: '../api/update.json',
-    DELETE: '../api/delete.json'
+    // UPDATE: '../api/update.json',
+    DELETE: 'http://localhost:8010/history/'
 };
 
 window.Eye = {
@@ -28,7 +28,7 @@ window.Eye = {
         }).done(function (histories) {
             console.info('done:', histories);
             Eye.display(histories);
-        });
+        })
     },
 
     // getActionRow: function() {
@@ -42,17 +42,17 @@ window.Eye = {
     // },
 
     delete: function(id) {
+        alert("api url delete "+API_URL.DELETE+id);
         $.ajax({
-            url: API_URL.DELETE,
-            method: "POST",
-            data: {
-                id: id
-            }
+
+            url: API_URL.DELETE+id,
+            method: "DELETE"
         }).done(function (response) {
             if (response.success) {
                 Eye.load();
             }
-        });
+        }).error(function(xhr, error){
+            console.debug(xhr); console.debug(error)});
     },
 
     add: function(person) {
