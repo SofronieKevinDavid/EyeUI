@@ -1,9 +1,8 @@
 var editId;
 
-// TODO edit API url's
 var API_URL = {
     CREATE: '../api/performance.json',
-    READ: '../api/performance.json',
+    READ: 'http://localhost:8010/history?userID=1',
     UPDATE: '../api/update.json',
     DELETE: '../api/delete.json'
 };
@@ -12,7 +11,7 @@ window.Eye = {
     getRow: function(history) {
         // ES6 string template
         return `<tr>
-            <td style="width:10px">${history.date}</td>
+            <td style="width:100px">${history.date}</td>
             <td style="width:100px">${history.result}</td>
             <td style="width:100px">${history.runnedGameLevel}</td>
             <td style="width:100px">${history.gameName}</td>
