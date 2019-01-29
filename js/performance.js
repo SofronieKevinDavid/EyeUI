@@ -51,7 +51,7 @@ window.Eye = {
             }
         }).done(function (response) {
             if (response.success) {
-                PhoneBook.load();
+                Eye.load();
             }
         });
     },
@@ -63,7 +63,7 @@ window.Eye = {
             data: person
         }).done(function (response) {
             if (response.success) {
-                PhoneBook.load();
+                Eye.load();
             }
         });
     },
@@ -82,10 +82,10 @@ window.Eye = {
     },
 
     bindEvents: function() {
-        $('#performance tbody').delegate('a.edit', 'click', function () {
-            var id = $(this).data('id');
-            Eye.edit(id);
-        });
+        // $('#performance tbody').delegate('a.edit', 'click', function () {
+        //     var id = $(this).data('id');
+        //     Eye.edit(id);
+        // });
 
         $('#performance tbody').delegate('a.delete', 'click', function () {
             var id = $(this).data('id');
@@ -109,30 +109,30 @@ window.Eye = {
         });
     },
 
-    edit: function (id) {
-        // ES5 function systax inside find
-        var editPerson = persons.find(function (person) {
-            console.log(person.firstName);
-            return person.id == id;
-        });
-        console.warn('edit', editPerson);
+    // edit: function (id) {
+    //     // ES5 function systax inside find
+    //     var editPerson = persons.find(function (person) {
+    //         console.log(person.firstName);
+    //         return person.id == id;
+    //     });
+    //     console.warn('edit', editPerson);
+    //
+    //     if (editId) {
+    //         const cancelBtn = `<button onclick="PhoneBook.cancelEdit(this)">Cancel</button>`;
+    //         $('#phone-book tbody tr:last-child() td:last-child()').append(cancelBtn);
+    //     }
+    //
+    //     $('input[name=firstName]').val(editPerson.firstName);
+    //     $('input[name=lastName]').val(editPerson.lastName);
+    //     $('input[name=phone]').val(editPerson.phone);
+    //     editId = id;
+    // },
 
-        if (editId) {
-            const cancelBtn = `<button onclick="PhoneBook.cancelEdit(this)">Cancel</button>`;
-            $('#phone-book tbody tr:last-child() td:last-child()').append(cancelBtn);
-        }
-
-        $('input[name=firstName]').val(editPerson.firstName);
-        $('input[name=lastName]').val(editPerson.lastName);
-        $('input[name=phone]').val(editPerson.phone);
-        editId = id;
-    },
-
-    cancelEdit: function(button) {
-        $( ".add-form" ).get(0).reset();
-        editId = '';
-        button.parentNode.removeChild(button);
-    },
+    // cancelEdit: function(button) {
+    //     $( ".table" ).get(0).reset();
+    //     editId = '';
+    //     button.parentNode.removeChild(button);
+    // },
 
     display: function(histories) {
         window.histories = histories;

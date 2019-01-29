@@ -131,25 +131,6 @@ body,html{
     background-color: #2ecc71;
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 .table{
     white-space: nowrap;
     overflow: hidden;
@@ -177,29 +158,6 @@ table td{
     font-size:19px;
     cursor:default;
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 table td:nth-child(5){
     text-decoration: red;
