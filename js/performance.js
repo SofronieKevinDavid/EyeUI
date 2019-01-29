@@ -4,7 +4,7 @@ var API_URL = {
     // CREATE: '../api/performance.json',
     READ: 'http://localhost:8010/history?userID=1',
     // UPDATE: '../api/update.json',
-    DELETE: 'http://localhost:8010/history/'
+    // DELETE: 'http://localhost:8010/history/'
 };
 
 window.Eye = {
@@ -15,9 +15,6 @@ window.Eye = {
             <td style="width:100px">${history.result}</td>
             <td style="width:100px">${history.runnedGameLevel}</td>
             <td style="width:100px">${history.gameName}</td>
-            <td>
-                <a href='../html/performance.html' data-id='${history.id}' class='delete' style="color:whitesmoke">&#128465;</a>
-            </td>
         </tr>`;
     },
 
@@ -41,19 +38,19 @@ window.Eye = {
     //         '</tr>';
     // },
 
-    delete: function(id) {
-        alert("api url delete "+API_URL.DELETE+id);
-        $.ajax({
-
-            url: API_URL.DELETE+id,
-            method: "DELETE"
-        }).done(function (response) {
-            if (response.success) {
-                Eye.load();
-            }
-        }).error(function(xhr, error){
-            console.debug(xhr); console.debug(error)});
-    },
+    // delete: function(id) {
+    //     alert("api url delete "+API_URL.DELETE+id);
+    //     $.ajax({
+    //
+    //         url: API_URL.DELETE+id,
+    //         method: "DELETE"
+    //     }).done(function (response) {
+    //         if (response.success) {
+    //             Eye.load();
+    //         }
+    //     }).error(function(xhr, error){
+    //         console.debug(xhr); console.debug(error)});
+    // },
 
     add: function(person) {
         $.ajax({
@@ -86,11 +83,11 @@ window.Eye = {
         //     Eye.edit(id);
         // });
 
-        $('#performance tbody').delegate('a.delete', 'click', function () {
-            var id = $(this).data('id');
-            console.info('click on ', this, id);
-            Eye.delete(id);
-        });
+        // $('#performance tbody').delegate('a.delete', 'click', function () {
+        //     var id = $(this).data('id');
+        //     console.info('click on ', this, id);
+        //     Eye.delete(id);
+        // });
 
         $( ".add-form" ).submit(function() {
             const person = {
