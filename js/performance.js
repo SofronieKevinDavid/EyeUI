@@ -26,7 +26,7 @@ window.Eye = {
     display: function(histories) {
         window.histories = histories;
         var rows = '';
-        
+
         histories.forEach(history => rows += Eye.getRow(history));
         $('#performance tbody').html(rows);
     }
