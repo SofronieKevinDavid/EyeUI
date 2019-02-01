@@ -1,10 +1,10 @@
 var editId;
 
 var API_URL = {
-    // CREATE: '../api/performance.json',
+    CREATE: '../api/performance.json',
     READ: 'http://localhost:8010/history?userID=1',
-    // UPDATE: '../api/update.json',
-    // DELETE: 'http://localhost:8010/history/'
+    UPDATE: '../api/update.json',
+    DELETE: 'http://localhost:8010/history/'
 };
 
 window.Eye = {
@@ -28,29 +28,29 @@ window.Eye = {
         })
     },
 
-    // getActionRow: function() {
-    //     // ES5 string concatenation
-    //     return '<tr>' +
-    //         '<td><input type="text" required name="firstName" placeholder="Enter first name"></td>' +
-    //         '<td><input type="text" name="lastName" placeholder="Enter last name"></td>' +
-    //         '<td><input type="text" required name="phone" placeholder="Enter phone"></td>' +
-    //         '<td><button type="submit">Save</button></td>' +
-    //         '</tr>';
-    // },
+     getActionRow: function() {
+         // ES5 string concatenation
+         return '<tr>' +
+             '<td><input type="text" required name="firstName" placeholder="Enter first name"></td>' +
+             '<td><input type="text" name="lastName" placeholder="Enter last name"></td>' +
+             '<td><input type="text" required name="phone" placeholder="Enter phone"></td>' +
+             '<td><button type="submit">Save</button></td>' +
+             '</tr>';
+     },
 
-    // delete: function(id) {
-    //     alert("api url delete "+API_URL.DELETE+id);
-    //     $.ajax({
-    //
-    //         url: API_URL.DELETE+id,
-    //         method: "DELETE"
-    //     }).done(function (response) {
-    //         if (response.success) {
-    //             Eye.load();
-    //         }
-    //     }).error(function(xhr, error){
-    //         console.debug(xhr); console.debug(error)});
-    // },
+     delete: function(id) {
+         alert("api url delete "+API_URL.DELETE+id);
+         $.ajax({
+
+             url: API_URL.DELETE+id,
+             method: "DELETE"
+         }).done(function (response) {
+             if (response.success) {
+                 Eye.load();
+             }
+         }).error(function(xhr, error){
+             console.debug(xhr); console.debug(error)});
+     },
 
     add: function(person) {
         $.ajax({
@@ -78,16 +78,16 @@ window.Eye = {
     },
 
     bindEvents: function() {
-        // $('#performance tbody').delegate('a.edit', 'click', function () {
-        //     var id = $(this).data('id');
-        //     Eye.edit(id);
-        // });
+         $('#performance tbody').delegate('a.edit', 'click', function () {
+             var id = $(this).data('id');
+             Eye.edit(id);
+         });
 
-        // $('#performance tbody').delegate('a.delete', 'click', function () {
-        //     var id = $(this).data('id');
-        //     console.info('click on ', this, id);
-        //     Eye.delete(id);
-        // });
+         $('#performance tbody').delegate('a.delete', 'click', function () {
+             var id = $(this).data('id');
+             console.info('click on ', this, id);
+             Eye.delete(id);
+         });
 
         $( ".add-form" ).submit(function() {
             const person = {
@@ -105,30 +105,30 @@ window.Eye = {
         });
     },
 
-    // edit: function (id) {
-    //     // ES5 function systax inside find
-    //     var editPerson = persons.find(function (person) {
-    //         console.log(person.firstName);
-    //         return person.id == id;
-    //     });
-    //     console.warn('edit', editPerson);
-    //
-    //     if (editId) {
-    //         const cancelBtn = `<button onclick="PhoneBook.cancelEdit(this)">Cancel</button>`;
-    //         $('#phone-book tbody tr:last-child() td:last-child()').append(cancelBtn);
-    //     }
-    //
-    //     $('input[name=firstName]').val(editPerson.firstName);
-    //     $('input[name=lastName]').val(editPerson.lastName);
-    //     $('input[name=phone]').val(editPerson.phone);
-    //     editId = id;
-    // },
+     edit: function (id) {
+         // ES5 function systax inside find
+         var editPerson = persons.find(function (person) {
+             console.log(person.firstName);
+             return person.id == id;
+         });
+         console.warn('edit', editPerson);
 
-    // cancelEdit: function(button) {
-    //     $( ".table" ).get(0).reset();
-    //     editId = '';
-    //     button.parentNode.removeChild(button);
-    // },
+         if (editId) {
+             const cancelBtn = `<button onclick="PhoneBook.cancelEdit(this)">Cancel</button>`;
+             $('#phone-book tbody tr:last-child() td:last-child()').append(cancelBtn);
+         }
+
+         $('input[name=firstName]').val(editPerson.firstName);
+         $('input[name=lastName]').val(editPerson.lastName);
+         $('input[name=phone]').val(editPerson.phone);
+         editId = id;
+     },
+
+     cancelEdit: function(button) {
+         $( ".table" ).get(0).reset();
+         editId = '';
+         button.parentNode.removeChild(button);
+     },
 
     display: function(histories) {
         window.histories = histories;
