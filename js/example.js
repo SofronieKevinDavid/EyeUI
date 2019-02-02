@@ -72,7 +72,7 @@ window.Eye = {
         }).done(function (response) {
             if (response.success) {
                 editId = '';
-                PhoneBook.load();
+                Eye.load();
             }
         });
     },

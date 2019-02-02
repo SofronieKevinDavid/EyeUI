@@ -34,4 +34,3 @@ window.Eye = {
 
 console.info('loading histories');
 Eye.load();
-Eye.bindEvents();
