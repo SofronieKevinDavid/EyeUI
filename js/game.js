@@ -16,6 +16,17 @@ function make_base()
     return base_img;
 }
 
+
+init();
+function init()
+{
+    ctx.beginPath();
+    ctx.fillStyle="#0000ff";
+    // Draws a circle of radius 20 at the coordinates 100,100 on the canvas
+    ctx.arc(100,100,20,0,Math.PI*2,true); context.closePath();
+    ctx.fill();
+}
+
 function makeNewPosition(){
     var h = $(window).height() - 50;
     var w = $(window).width() - 50;

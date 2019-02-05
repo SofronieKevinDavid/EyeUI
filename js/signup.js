@@ -6,11 +6,16 @@ var window=new XMLHttpRequest();
 
 window.Eye = {
     add: function(person) {
+        alert(API_URL.USER);
         $.ajax({
             url: API_URL.USER,
+            headers: {
+                "Content-Type": "application/json"
+            },
             method: "POST",
-            data: person
+            data: JSON.stringify(person, null, 2)
         }).done(function (response) {
+            alert(response);
             if (response.success) {
                 alert("It's working.");
             }
