@@ -8,10 +8,12 @@ window.Eye = {
             url: API_URL.READ+person.name,
             method: "GET"
         }).done(function (person) {
+            alert("right");
             return person;
-        })
+        }).fail(function () {
+            alert("wrong");
+        });
     },
-
 
     bindEvents: function() {
         $( ".box" ).submit(function() {
@@ -19,22 +21,10 @@ window.Eye = {
                 name: $('input[name=name]').val(),
                 password: $('input[name=password]').val()
             };
-
-            return person;
+            Eye.load(person);
         });
-    },
-
-    final: function(){
-        var person=Eye.bindEvents();
-        var person2=Eye.load(person);
-        if(person==person2){
-            url:'../html/home.html';
-        }else{
-            url:'../html/login.html'
-        }
-
     }
 };
 
 console.info('loading if user is correct');
-Eye.final();
+Eye.bindEvents();
