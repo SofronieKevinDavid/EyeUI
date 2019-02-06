@@ -19,6 +19,8 @@ window.Eye = {
             if (response.success) {
                 alert("It's working.");
             }
+        }).error(function () {
+            alert("wrong");
         });
     },
 
