@@ -1,5 +1,5 @@
 var API_URL = {
-    READ: 'http://localhost:8010/user?name='
+    READ: 'http://localhost:8010/user'
 };
 
 window.Eye = {
