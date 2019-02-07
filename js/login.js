@@ -5,19 +5,19 @@ var API_URL = {
 window.Eye = {
     load: function (person) {
          $.ajax({
-             url: API_URL.READ+person.name,
+             url: API_URL.READ,
 
              headers: {
                  "Content-Type": "application/json"
              },
              method: "GET",
-             data: JSON.stringify(person, null, 2)
+             data: {name:person.name}
          }).done(function (response) {
              alert(response);
              if (response.success) {
                  alert("It's working.");
              }
-         }).error(function () {
+         }).error(function (xhr) {
              alert("wrong");
          });
         /*$.ajax({
