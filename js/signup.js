@@ -17,11 +17,9 @@ window.Eye = {
         }).done(function (response) {
             console.info('success');
             console.info(response);
-            window.location.pathname = "../html/home.html";
         }).fail(function (response) {
             console.info('errrrrrror');
             console.info(response);
-            window.location.pathname = "../html/signup.html";
         });
     },
 
