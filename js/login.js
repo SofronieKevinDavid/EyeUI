@@ -19,7 +19,7 @@ window.Eye = {
          }).fail(function (response) {
              console.log("error");
              console.log(response);
-             window.location.href="../html/login.html";
+             window.location.href="../html/usernameOrPasswordIncorrect.html";
          });
     },
 

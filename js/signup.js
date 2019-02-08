@@ -21,7 +21,7 @@ window.Eye = {
         }).fail(function (response) {
             console.info('errrrrrror');
             console.info(response);
-            window.location.href="../html/signup.html";
+            window.location.href="../html/usernameAlreadyTaken.html";
         });
     },
 
