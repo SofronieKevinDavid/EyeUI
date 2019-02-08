@@ -2,13 +2,10 @@ var API_URL = {
     READ: 'http://localhost:8010/user'
 };
 
-var pass;
-
 window.Eye = {
     load: function (person) {
          $.ajax({
              url: API_URL.READ,
-
              headers: {
                  "Content-Type": "application/json"
              },
@@ -22,7 +19,6 @@ window.Eye = {
              }else{
                  window.location.href="../html/passwordIncorrect.html";
              }
-
          }).fail(function (response) {
              console.log("error");
              console.log(response);
