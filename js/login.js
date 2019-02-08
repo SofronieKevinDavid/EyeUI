@@ -20,13 +20,13 @@ window.Eye = {
              if(data.password==person.password){
                  window.location.href="../html/home.html";
              }else{
-                 window.location.href="../html/PasswordIncorrect.html";
+                 window.location.href="../html/passwordIncorrect.html";
              }
 
          }).fail(function (response) {
              console.log("error");
              console.log(response);
-             window.location.href="../html/usernameOrPasswordIncorrect.html";
+             window.location.href="../html/usernameIncorrect.html";
          });
     },
 
