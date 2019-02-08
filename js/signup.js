@@ -17,9 +17,11 @@ window.Eye = {
         }).done(function (response) {
             console.info('success');
             console.info(response);
+            window.location.href="../html/home.html";
         }).fail(function (response) {
             console.info('errrrrrror');
             console.info(response);
+            window.location.href="../html/signup.html";
         });
     },
 

@@ -15,9 +15,11 @@ window.Eye = {
              data: {name:person.name}
          }).done(function (data, textStatus, jqXHR) {
              console.log('success ' + JSON.stringify(data));
+             window.location.href="../html/home.html";
          }).fail(function (response) {
              console.log("error");
              console.log(response);
+             window.location.href="../html/login.html";
          });
     },
 
