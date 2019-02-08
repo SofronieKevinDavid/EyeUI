@@ -10,15 +10,14 @@ window.Eye = {
              headers: {
                  "Content-Type": "application/json"
              },
+             contentType: "application/json",
              method: "GET",
              data: {name:person.name}
-         }).done(function (response) {
-             alert(response);
-             if (response.success) {
-                 alert("It's working.");
-             }
-         }).error(function (xhr) {
-             alert("wrong");
+         }).done(function (data, textStatus, jqXHR) {
+             console.log('success ' + JSON.stringify(data));
+         }).fail(function (response) {
+             console.log("error");
+             console.log(response);
          });
     },
 
@@ -29,6 +28,7 @@ window.Eye = {
                 password: $('input[name=password]').val()
             };
             Eye.load(person);
+            return false;
         });
     }
 };
