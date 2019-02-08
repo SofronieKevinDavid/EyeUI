@@ -32,6 +32,7 @@ window.Eye = {
             console.log('submitting data');
             console.log(person);
             Eye.add(person);
+            return false;
         });
     }
 };
