@@ -2,6 +2,8 @@ var API_URL = {
     READ: 'http://localhost:8010/user'
 };
 
+var pass;
+
 window.Eye = {
     load: function (person) {
          $.ajax({
@@ -15,7 +17,12 @@ window.Eye = {
              data: {name:person.name}
          }).done(function (data, textStatus, jqXHR) {
              console.log('success ' + JSON.stringify(data));
-             window.location.href="../html/home.html";
+             if(data.password==person.password){
+                 window.location.href="../html/home.html";
+             }else{
+                 window.location.href="../html/PasswordIncorrect.html";
+             }
+
          }).fail(function (response) {
              console.log("error");
              console.log(response);
