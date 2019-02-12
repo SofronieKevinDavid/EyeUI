@@ -2,17 +2,10 @@ var canvas=document.getElementById("myCanvas");
 var ctx=canvas.getContext("2d");
 
 
-var img=make_base();
-
 function make_base()
 {
     base_img = new Image();
-    base_img.src = '../images/e.png';
-    base_img.style.height="10%";
-    base_img.style.width="10%";
-    base_img.onload = function(){
-        ctx.drawImage(base_img, 0, 0);
-    }
+    base_img.src = '../images/E.png';
     return base_img;
 }
 
@@ -21,13 +14,15 @@ init();
 function init()
 {
     ctx.beginPath();
-    ctx.fillStyle="#0000ff";
-    // Draws a circle of radius 20 at the coordinates 100,100 on the canvas
-    ctx.arc(100,100,20,0,Math.PI*2,true); context.closePath();
-    ctx.fill();
+    var img=make_base();
+    base_img.onload = function(){
+        ctx.drawImage(img, 0, 0,4, 4);
+    };
+
+    ctx.closePath();
 }
 
-function makeNewPosition(){
+function makeNewPosition(img){
     var h = $(window).height() - 50;
     var w = $(window).width() - 50;
 
@@ -54,5 +49,5 @@ function getNewAngle(prev, next){
 }
 
 img.onkeypress =function(){
-    makeNewPosition();
+    makeNewPosition(img);
 }
