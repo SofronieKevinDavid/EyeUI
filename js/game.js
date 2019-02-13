@@ -40,7 +40,7 @@ function checkKey(e) {
 
     e = e || window.event;
 
-    if ((e.keyCode == rand) {// up arrow
+    if (e.keyCode == rand) {// up arrow
         result++;
     }
     else if (e.keyCode == rand) {// left arrow
