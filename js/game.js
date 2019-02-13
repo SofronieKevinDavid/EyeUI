@@ -16,18 +16,19 @@ function moveDiv() {
 
 var arrows = [
     {
-        "rotation":"rotate(-90deg)",
+        "classRotate":"rotate1",
         "key":"38"//up
     },
     {
-        "rotation":"rotate(-180deg)",
+        "classRotate":"rotate2",
         "key":"37"//left
     },
     {
-        "rotation":"rotate(-270deg)",
+        "classRotate":"rotate3",
         "key":"40"//down
     },
     {
+        "classRotate":"rotate4",
         "key":"38"//right
     }
 ];
@@ -35,9 +36,10 @@ var arrows = [
 var a=[1,2,3,4];
 var rand=1;
 
-function rotateRandom(l){
-    x=arrows[l];
-    $("#random").style.webkitTransform=x.rotation;
+function rotateRandom(p){
+    console.log("random ="+p);
+    console.log(arrows[p-1]);
+    $("#random").addClass(arrows[p-1].classRotate);
 }
 
 
@@ -49,7 +51,7 @@ function portocala(){
 }
 
 function checkKey(e) {
-    
+
     e = e || window.event;
 
     if ((e.keyCode == '38')&(rand==1)) {
@@ -70,6 +72,7 @@ function checkKey(e) {
     }
 
     moveDiv();
+    console.log(result);
     portocala();
 }
 
