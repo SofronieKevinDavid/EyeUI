@@ -14,32 +14,47 @@ function moveDiv() {
     });
 };
 
-var arrows = [
-    {
-        "classRotate":"rotate1",
-        "key":"38"//up
-    },
-    {
-        "classRotate":"rotate2",
-        "key":"37"//left
-    },
-    {
-        "classRotate":"rotate3",
-        "key":"40"//down
-    },
-    {
-        "classRotate":"rotate4",
-        "key":"38"//right
-    }
-];
+var one = {
+        classRotate:"-webkit-transform: rotate(-90deg);",
+        classRotateBack:"-webkit-transform: rotate(+90deg);",
+        key:"38"//up
+    };
+var two = {
+        classRotate:"-webkit-transform: rotate(-180deg);",
+        classRotateBack:"-webkit-transform: rotate(+180deg);",
+        key:"37"//left
+    };
+var three = {
+        classRotate:" -webkit-transform: rotate(-270deg);",
+        classRotateBack:" -webkit-transform: rotate(+270deg);",
+        key:"40"//down
+    };
+var four = {
+        classRotate:"-webkit-transform: rotate(-360deg);",
+        classRotateBack:"-webkit-transform: rotate(+360deg);",
+        key:"38"//right
+    };
+var arrows=[one,two,three,four];
 
-var a=[1,2,3,4];
-var rand=1;
+
+var arrow=new Map();
+arrow.set(38,"-webkit-transform: rotate(-90deg);");//up
+arrow.set(37,"-webkit-transform: rotate(-180deg);");//left
+arrow.set(40," -webkit-transform: rotate(-270deg);");//down
+arrow.set(38,"-webkit-transform: rotate(-360deg);");//right
+
+var a=[38,37,40,38];
+var rand=38;
 
 function rotateRandom(p){
     console.log("random ="+p);
-    console.log(arrows[p-1]);
-    $("#random").addClass(arrows[p-1].classRotate);
+    console.log(arrows[p]);
+    x=arrow.get(p);
+    $("#random").attr("style",x);
+}
+function rotateBack(){
+    y=arrow.get(rand);
+    $("#random").attr("style",y);
 }
 
 
@@ -71,9 +86,11 @@ function checkKey(e) {
         result++;
     }
 
+    portocala();
     moveDiv();
     console.log(result);
-    portocala();
+
 }
 
 document.onkeydown = checkKey;
+//rotateBack();
