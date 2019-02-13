@@ -14,41 +14,18 @@ function moveDiv() {
     });
 };
 
-var one = {
-        classRotate:"-webkit-transform: rotate(-90deg);",
-        classRotateBack:"-webkit-transform: rotate(+90deg);",
-        key:"38"//up
-    };
-var two = {
-        classRotate:"-webkit-transform: rotate(-180deg);",
-        classRotateBack:"-webkit-transform: rotate(+180deg);",
-        key:"37"//left
-    };
-var three = {
-        classRotate:" -webkit-transform: rotate(-270deg);",
-        classRotateBack:" -webkit-transform: rotate(+270deg);",
-        key:"40"//down
-    };
-var four = {
-        classRotate:"-webkit-transform: rotate(-360deg);",
-        classRotateBack:"-webkit-transform: rotate(+360deg);",
-        key:"38"//right
-    };
-var arrows=[one,two,three,four];
-
-
 var arrow=new Map();
 arrow.set(38,"-webkit-transform: rotate(-90deg);");//up
 arrow.set(37,"-webkit-transform: rotate(-180deg);");//left
 arrow.set(40," -webkit-transform: rotate(-270deg);");//down
-arrow.set(38,"-webkit-transform: rotate(-360deg);");//right
+arrow.set(39,"-webkit-transform: rotate(-360deg);");//right
 
-var a=[38,37,40,38];
-var rand=38;
+var a=[38,37,40,39];
+var rand=39;
 
 function rotateRandom(p){
     console.log("random ="+p);
-    console.log(arrows[p]);
+    console.log(arrow.get(p));
     x=arrow.get(p);
     $("#random").attr("style",x);
 }
