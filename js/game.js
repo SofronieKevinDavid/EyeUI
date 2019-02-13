@@ -29,12 +29,6 @@ function rotateRandom(p){
     x=arrow.get(p);
     $("#random").attr("style",x);
 }
-function rotateBack(){
-    y=arrow.get(rand);
-    $("#random").attr("style",y);
-}
-
-
 
 function portocala(){
     rand = a[Math.floor(Math.random() * a.length)];
@@ -46,28 +40,22 @@ function checkKey(e) {
 
     e = e || window.event;
 
-    if ((e.keyCode == '38')&(rand==1)) {
-        // up arrow
+    if ((e.keyCode == rand) {// up arrow
         result++;
     }
-    else if (e.keyCode == '37'&(rand==2)) {
-        // left arrow
+    else if (e.keyCode == rand) {// left arrow
         result++;
     }
-    else if (e.keyCode == '40'&(rand==3)) {
-        // down arrow
+    else if (e.keyCode == rand) {// down arrow
         result++;
     }
-    else if (e.keyCode == '39'&(rand==4)) {
-        // right arrow
+    else if (e.keyCode == rand) {// right arrow
         result++;
     }
-
     portocala();
     moveDiv();
     console.log(result);
-
 }
 
 document.onkeydown = checkKey;
-//rotateBack();
+
