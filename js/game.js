@@ -1,4 +1,5 @@
 var result=0;
+var index=0;
 
 function moveDiv() {
     var $span = $("#random");
@@ -38,6 +39,8 @@ function portocala(){
 
 function checkKey(e) {
 
+    index++;
+    console.log("index = "+index);
     e = e || window.event;
 
     if (e.keyCode == rand) {// up arrow
@@ -55,6 +58,9 @@ function checkKey(e) {
     portocala();
     moveDiv();
     console.log(result);
+    if(index==10){
+        console.log("index is big enough.");
+    }
 }
 
 document.onkeydown = checkKey;
