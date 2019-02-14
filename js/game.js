@@ -151,9 +151,9 @@ var API_URL = {
     HISTORY: 'http://localhost:8010/history'
 };
 
-var window2=new XMLHttpRequest();
+var window=new XMLHttpRequest();
 
-window2.Eye2 = {
+window.Eye2 = {
     add2: function(person) {
         console.log("entered add2.");
         $.ajax({
