@@ -145,17 +145,15 @@ window.Eye1 = {
     }
 };
 
-
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-
 
 var API_URL = {
     HISTORY: 'http://localhost:8010/history'
 };
 
-var window=new XMLHttpRequest();
+var window2=new XMLHttpRequest();
 
-window.Eye2 = {
+window2.Eye2 = {
     add2: function(person) {
         console.log("entered add2.");
         $.ajax({
