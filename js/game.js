@@ -100,26 +100,27 @@ document.onkeydown = checkKey;
 
 var runnedGame;
 
-var API_URL = {
-    RUN: 'http://localhost:8010/runnedGame'
+var API_URLL = {
+    RUN: 'http://localhost:8010/runnedgame'
 };
 
 var window=new XMLHttpRequest();
 
 window.Eye1 = {
     add1: function(run) {
+        console.log(API_URLL.RUN);
         console.log("entered add1.");
         $.ajax({
-            url: API_URL.RUN,
+            url: API_URLL.RUN,
             headers: {
                 "Content-Type": "application/json"
             },
             method: "POST",
             data: JSON.stringify(run, null, 2)
-        }).done(function (response) {
-            console.info('success');
-            console.info(response);
-            console.log(API_URL.RUN);
+        }).done(function (data) {
+            console.info('success' +JSON.stringify(data));
+            console.log("id is equal to "+data.id);
+            console.log(API_URLL.RUN);
             Eye2.bindEvents2();
         }).fail(function (response) {
             console.info('errrrrrror');
@@ -166,9 +167,9 @@ window.Eye2 = {
             },
             method: "POST",
             data: JSON.stringify(person, null, 2)
-        }).done(function (response) {
-            console.info('success');
-            console.info(response);
+        }).done(function (data) {
+            console.info('success'+JSON.stringify(data));
+            console.log("id is equal to "+data.id);
             console.log(API_URL.HISTORY);
             window.location.href="../html/home.html";
         }).fail(function (response) {

@@ -1,7 +1,7 @@
 var API_URL = {
     READ: 'http://localhost:8010/user'
 };
-
+var returnedUserId;
 window.Eye = {
     load: function (person) {
          $.ajax({
@@ -14,6 +14,7 @@ window.Eye = {
              data: {name:person.name}
          }).done(function (data, textStatus, jqXHR) {
              console.log('success ' + JSON.stringify(data));
+             returnedUserId=data.id;
              if(data.password==person.password){
                  window.location.href="../html/home.html";
              }else{

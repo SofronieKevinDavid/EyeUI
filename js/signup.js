@@ -14,8 +14,8 @@ window.Eye = {
             },
             method: "POST",
             data: JSON.stringify(person, null, 2)
-        }).done(function (response) {
-            console.info('success');
+        }).done(function (response, data) {
+            console.info('success'+JSON.stringify(data));
             console.info(response);
             window.location.href="../html/home.html";
         }).fail(function (response) {
