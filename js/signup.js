@@ -17,7 +17,7 @@ window.Eye = {
         }).done(function (response, data) {
             console.info('success'+JSON.stringify(data));
             console.info(response);
-            window.location.href="../html/home.html";
+            window.location.href="../html/login.html";
         }).fail(function (response) {
             console.info('errrrrrror');
             console.info(response);
