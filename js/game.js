@@ -60,9 +60,138 @@ function checkKey(e) {
     console.log(result);
     if(index==10){
         console.log("index is big enough.");
+        Eye1.bindEvents1();
     }
 }
 
+var today = new Date();
+var dd = today.getDate();
+var mm = today.getMonth() + 1; //January is 0!
+var yyyy = today.getFullYear();
+var hours=today.getHours();
+var minutes=today.getMinutes();
+var seconds=today.getSeconds();
+if (dd < 10) {
+    dd = '0' + dd;
+}
+
+if (mm < 10) {
+    mm = '0' + mm;
+}
+if(hours<10){
+    hours='0'+hours;
+}
+
+if(minutes<10){
+    minutes='0'+minutes;
+}
+
+if(seconds<10){
+    seconds='0'+seconds;
+}
+
+
+today=yyyy+'-'+dd+"-"+mm+" "+hours+":"+minutes;
+
+console.log(today);
 document.onkeydown = checkKey;
 
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+var runnedGame;
+
+var API_URL = {
+    RUN: 'http://localhost:8010/runnedGame'
+};
+
+var window=new XMLHttpRequest();
+
+window.Eye1 = {
+    add1: function(run) {
+        console.log("entered add1.");
+        $.ajax({
+            url: API_URL.RUN,
+            headers: {
+                "Content-Type": "application/json"
+            },
+            method: "POST",
+            data: JSON.stringify(run, null, 2)
+        }).done(function (response) {
+            console.info('success');
+            console.info(response);
+            console.log(API_URL.RUN);
+            Eye2.bindEvents2();
+        }).fail(function (response) {
+            console.info('errrrrrror');
+            console.info(response);
+            window.location.href="../html/usernameIncorrect.html";
+        });
+    },
+
+    bindEvents1: function() {
+        console.info('loading RUN');
+        const run = {
+            level: 1,
+            gameDefinitionId: 1,
+            userId:1
+        };
+        console.log('submitting data 1');
+        console.log(run);
+        Eye1.add1(run);
+
+        return false;
+    }
+};
+
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+//runnedGame=run1.id;
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+
+var API_URL = {
+    HISTORY: 'http://localhost:8010/history'
+};
+
+var window=new XMLHttpRequest();
+
+window.Eye2 = {
+    add2: function(person) {
+        console.log("entered add2.");
+        $.ajax({
+            url: API_URL.HISTORY,
+            headers: {
+                "Content-Type": "application/json"
+            },
+            method: "POST",
+            data: JSON.stringify(person, null, 2)
+        }).done(function (response) {
+            console.info('success');
+            console.info(response);
+            console.log(API_URL.HISTORY);
+            window.location.href="../html/home.html";
+        }).fail(function (response) {
+            console.info('errrrrrror');
+            console.info(response);
+            window.location.href="../html/usernameAlreadyTaken.html";
+        });
+    },
+
+    bindEvents2: function() {
+        console.info('loading HISTORY');
+            const person = {
+                result: result,
+                date: today,
+                runnedGameId: runnedGame,
+                userId:1
+            };
+            console.log('submitting data 2');
+            console.log(person);
+            Eye2.add2(person);
+            return false;
+    }
+};
+
+
+
