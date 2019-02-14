@@ -1,5 +1,7 @@
+var i=document.cookie;
+var read='http://localhost:8010/history?userId='+2;
 var API_URL = {
-    READ: 'http://localhost:8010/history?userID=1'
+    READ: read
 };
 
 window.Eye = {
@@ -15,7 +17,7 @@ window.Eye = {
 
     load: function () {
         $.ajax({
-            url: API_URL.READ,
+            url: API_URL.READ+2,
             method: "GET"
         }).done(function (histories) {
             console.info('done:', histories);
@@ -33,4 +35,5 @@ window.Eye = {
 };
 
 console.info('loading histories');
+console.log("cookie = "+document.cookie);
 Eye.load();
