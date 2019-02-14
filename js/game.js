@@ -98,6 +98,7 @@ document.onkeydown = checkKey;
 
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
+
 var runnedGame;
 
 var API_URLL = {
@@ -118,8 +119,8 @@ window.Eye1 = {
             method: "POST",
             data: JSON.stringify(run, null, 2)
         }).done(function (data) {
-            console.info('success' +JSON.stringify(data));
-            runnedGame=data.id;
+            console.info('success ' +JSON.stringify(data));
+            runnedGame=data;
             console.log("id is equal to "+data.id);
             console.log(API_URLL.RUN);
             Eye2.bindEvents2();
@@ -135,7 +136,7 @@ window.Eye1 = {
         const run = {
             level: 1,
             gameDefinitionId: 1,
-            userId:1
+            userId:2
         };
         console.log('submitting data 1');
         console.log(run);
@@ -144,6 +145,7 @@ window.Eye1 = {
         return false;
     }
 };
+
 
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
@@ -165,7 +167,7 @@ window.Eye2 = {
             data: JSON.stringify(person, null, 2)
         }).done(function (data) {
             console.info('success'+JSON.stringify(data));
-            console.log("id is equal to "+data.id);
+            console.log("id is equal to "+data);
             console.log(API_URL.HISTORY);
             window.location.href="../html/home.html";
         }).fail(function (response) {
@@ -181,7 +183,7 @@ window.Eye2 = {
                 result: result,
                 date: today,
                 runnedGameId: runnedGame,
-                userId:1
+                userId:2
             };
             console.log('submitting data 2');
             console.log(person);
