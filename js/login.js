@@ -14,6 +14,8 @@ window.Eye = {
              data: {name:person.name}
          }).done(function (data, textStatus, jqXHR) {
              console.log('success ' + JSON.stringify(data));
+             console.log("cookie : "+data.id);
+             document.cookie=data.id;
              if(data.password==person.password){
                  window.location.href="../html/home.html";
              }else{

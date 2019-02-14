@@ -136,7 +136,7 @@ window.Eye1 = {
         const run = {
             level: 1,
             gameDefinitionId: 1,
-            userId:2
+            userId:document.cookie
         };
         console.log('submitting data 1');
         console.log(run);
@@ -169,7 +169,7 @@ window.Eye2 = {
             console.info('success'+JSON.stringify(data));
             console.log("id is equal to "+data);
             console.log(API_URL.HISTORY);
-            window.location.href="../html/home.html";
+            window.location.href="../html/performance.html";
         }).fail(function (response) {
             console.info('errrrrrror');
             console.info(response);
@@ -183,7 +183,7 @@ window.Eye2 = {
                 result: result,
                 date: today,
                 runnedGameId: runnedGame,
-                userId:2
+                userId:document.cookie
             };
             console.log('submitting data 2');
             console.log(person);
