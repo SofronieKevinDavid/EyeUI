@@ -1,8 +1,9 @@
 var i=document.cookie;
-var read='http://localhost:8010/history?userId='+2;
+var read='http://localhost:8010/history?userID='+i;
 var API_URL = {
     READ: read
 };
+console.log(API_URL.READ);
 
 window.Eye = {
     getRow: function(history) {
@@ -10,14 +11,12 @@ window.Eye = {
         return `<tr>
             <td style="width:100px">${history.date}</td>
             <td style="width:100px">${history.result}</td>
-            <td style="width:100px">${history.runnedGameLevel}</td>
-            <td style="width:100px">${history.gameName}</td>
         </tr>`;
     },
 
     load: function () {
         $.ajax({
-            url: API_URL.READ+2,
+            url: API_URL.READ,
             method: "GET"
         }).done(function (histories) {
             console.info('done:', histories);
@@ -28,7 +27,6 @@ window.Eye = {
     display: function(histories) {
         window.histories = histories;
         var rows = '';
-
         histories.forEach(history => rows += Eye.getRow(history));
         $('#performance tbody').html(rows);
     }
