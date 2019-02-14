@@ -2,7 +2,7 @@ body{
     margin:0;
     padding: 0;
     font-family: sans-serif;
-    background:url("../images/tree.jpg") no-repeat center center ;
+    background:url("../images/tree.jpg") center center ;
     background-size:cover;
     height: 100%;
 }
