@@ -102,7 +102,7 @@ document.onkeydown = checkKey;
 var runnedGame;
 
 var API_URLL = {
-    RUN: 'http://localhost:8010/runnedgame'
+    RUN: 'http://localhost:8010/rangame'
 };
 
 var window=new XMLHttpRequest();

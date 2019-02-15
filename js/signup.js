@@ -6,7 +6,6 @@ var window=new XMLHttpRequest();
 
 window.Eye = {
     add: function(person) {
-        // alert(API_URL.USER);
         $.ajax({
             url: API_URL.USER,
             headers: {
