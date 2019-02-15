@@ -7,7 +7,6 @@ console.log(API_URL.READ);
 
 window.Eye = {
     getRow: function(history) {
-
         return `<tr>
             <td style="width:100px">${history.date}</td>
             <td style="width:100px">${history.result}</td>
