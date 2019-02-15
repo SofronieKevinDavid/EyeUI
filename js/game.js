@@ -182,7 +182,7 @@ window.Eye2 = {
             const person = {
                 result: result,
                 date: today,
-                runnedGameId: runnedGame,
+                ranGameId: runnedGame,
                 userId:document.cookie
             };
             console.log('submitting data 2');
