@@ -1,6 +1,6 @@
 # Project Title
 
-I made a game as a site for people with eyesight problems, "Eye". An user can log in, play the game and track his score
+I made a game as a site for people with eyesight problems, "Eye". An user can log in, play the game and track his score.
 
 ## Getting Started
 
