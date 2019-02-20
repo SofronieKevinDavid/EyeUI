@@ -23,7 +23,8 @@ The tests from the java part of the exam have to coincide with the DB fields in 
 
 ## Programming Languages
 
-*Java
-*Javascript
-*Css
-*Html
+* [Java]- For backend
+* [Javascript]- For frontend
+* [Css]- For frontend
+* [Html]- For frontend
+
